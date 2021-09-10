@@ -133,7 +133,7 @@ const gameStart = () => {
 		enemyCar.classList.add("enemy");
 		gameArea.appendChild(enemyCar);
 		enemyCar.style.left = Math.floor(Math.random() * 350) + "px";
-		enemyCar.style.top = 230 * i - 100 + "px";
+		enemyCar.style.top = 230 * i - 200 + "px";
 	}
 	// Car element
 
