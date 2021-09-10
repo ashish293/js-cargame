@@ -1,0 +1,42 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.hidden {
+	display: none;
+}
+.car {
+	height: 70px;
+	width: 50px;
+	position: absolute;
+	background: red;
+	left: 100px;
+	bottom: 20px;
+}
+.enemy {
+	height: 70px;
+	width: 50px;
+	position: absolute;
+	background: blue;
+	top: -10px;
+}
+.gameArea {
+	width: 400px;
+	height: 100vh;
+	position: relative;
+	background: #2c3e50;
+	margin: auto;
+}
+body {
+	background: url(background.jpg) no-repeat center center/cover;
+	height: 100vh;
+}
+.roadline {
+	width: 10px;
+	height: 100px;
+	background: white;
+	position: absolute;
+	left: 195px;
+}
