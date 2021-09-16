@@ -148,8 +148,6 @@ const gameStart = () => {
 	player.x = car.offsetLeft;
 	player.y = car.offsetTop;
 	player.xmax = gameArea.offsetWidth - car.offsetWidth - 10;
-	console.log(gameArea.offsetHeight);
-	console.log(car.offsetHeight);
 	player.ymax = gameArea.offsetHeight - car.offsetHeight - 10;
 
 	window.requestAnimationFrame(gamePlay);
