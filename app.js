@@ -19,7 +19,7 @@ document.addEventListener("keyup", (e) => {
 
 // For Adjusting Game Area Size and Score Box Size for Mobile Devices 
 if (window.innerWidth > 359 && window.innerWidth < 431) {
-	gameArea.style.width = `${window.innerWidth}px`;
+	gameArea.style.width = '100dvw';
 	gameArea.style.top = '0%';
 	gameArea.style.left = '0%';
 	gameArea.style.margin = '0px';
