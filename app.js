@@ -3,6 +3,7 @@ const startScreen = document.querySelector(".startScreen");
 const gameArea = document.querySelector(".gameArea");
 const carSound = new Audio("music/car.mp3");
 const crashSound = new Audio("music/crash.mp3");
+const currScore = document.querySelector('.currScore');
 
 
 let keys = { ArrowUp: false, ArrowDown: false, ArrowRight: false, ArrowLeft: false, " ": false };
@@ -18,7 +19,7 @@ document.addEventListener("keyup", (e) => {
 
 // For Adjusting Game Area Size and Score Box Size for Mobile Devices 
 if (window.innerWidth > 359 && window.innerWidth < 431) {
-	gameArea.style.width = `${window.innerWidth}px`;
+	gameArea.style.width = '100dvw';
 	gameArea.style.top = '0%';
 	gameArea.style.left = '0%';
 	gameArea.style.margin = '0px';
@@ -37,11 +38,16 @@ if (window.innerWidth > 359 && window.innerWidth < 431) {
 }
 
 if (window.innerHeight > 665 && window.innerHeight < 933) {
-	gameArea.style.height = '90vh';
+	gameArea.style.height = '90dvh';
 	let y = (0.91 * window.innerHeight);
-	let x = (0.15 * window.innerWidth);
+	let x = (0.155 * window.innerWidth);
 	score.style.transform = `translate(${x}px, ${y}px)`;
-	score.style.width = '300px';
+	score.style.width = `${window.innerWidth/1.7}px`;
+        score.style.height = `${window.innerHeight/12}px`;
+        score.style.display = 'flex';
+        score.style.flexDirection = 'column';
+        score.style.justifyContent = 'center';
+        currScore.style.fontSize = '1.5rem';
 ;
 } else {
 	gameArea.style.height = '100vh';
@@ -104,7 +110,12 @@ const moveEnemy = async () => {
                 y += player.speed;
 
                 if (y > gameArea.offsetHeight - 120) {
-                        elem.style.left = Math.floor(Math.random() * 350) + "px";
+                        // Correct Positioning of Enemy Car for Mobile Devices.
+                        if (window.innerWidth > 359 && window.innerWidth < 431) {
+	                        elem.style.left = Math.floor(Math.random() * (window.innerWidth - 50)) + "px";
+	                } else {
+		                elem.style.left = Math.floor(Math.random() * 350) + "px";
+                        }
                         y = -100;
                         let n = Math.floor(Math.random() * 5);
                         elem.src = `images/car${n}.png`;
